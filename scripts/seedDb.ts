@@ -1,6 +1,7 @@
 import { Profile } from '../src/models/Profile'
 import { Job } from '../src/models/Job'
 import { Contract } from '../src/models/Contract';
+import { User } from '../src/models/User'
 
 /* WARNING THIS WILL DROP THE CURRENT DATABASE */
 seed();
@@ -9,6 +10,7 @@ async function seed() {
   await Profile.sync({ force: true });
   await Contract.sync({ force: true });
   await Job.sync({ force: true });
+  await User.sync({ force: true })
 
   await Promise.all([
     Profile.create({
@@ -226,6 +228,10 @@ async function seed() {
       paymentDate: '2020-08-14T23:11:26.737Z',
       ContractId: 3,
     }),
+    User.create({
+      username: 'admin',
+      isAdmin: true
+    })
   ]);
 
   const profiles = await Profile.findAll()
