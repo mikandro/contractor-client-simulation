@@ -1,6 +1,6 @@
 {
-  "name": "deel-task",
-  "version": "0.1.0",
+  "name": "client-contractor-simulator",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "body-parser": "^1.19.0",
